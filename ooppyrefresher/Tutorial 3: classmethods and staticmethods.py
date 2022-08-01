@@ -29,12 +29,44 @@ class Employee:
     # to do that we're going to use class methods and to turn a regular method into a class method it's as easy as adding a decorator to the top called class method
     @classmethod # Decorator is altering the functionality of our method to where now we receive the class as our first argument instead of the instance
     def set_raise_amount(cls, amount):
+        cls.raise_amount = amount
 
+    @classmethod #we're use this as alternative consturctor
+    def from_string(cls, emp_str):
+        first, last , pay = emp_str.split('-')
+        return cls(first, last, pay)
 
+emp_1 = Employee('Ameer','Ul Islam', 200000)
+emp_2 = Employee('Raees','Ul Islam', 500000)    
 
+print(Employee.raise_amount)
+print(emp_1.raise_amount)
+print(emp_2.raise_amount)
 
+Employee.set_raise_amount(1.05) #this is equivalent to Employee.raise_amount = 1.05 , but now we're using class method set_raise_amount
+print(Employee.raise_amount)
+print(emp_1.raise_amount)
+print(emp_2.raise_amount)
 
+emp_1.set_raise_amount(1.06) #If you use instance it will work the same as well but this is unlikely to be used
+print(Employee.raise_amount)
+print(emp_1.raise_amount)
+print(emp_2.raise_amount)
 
+# class methods as alternative constructors
+# The limitation example below
+emp_str_1 = 'John-Doe-7000'
+emp_str_2 = 'Ameer-UlIslam-2000000'
+emp_str_3 = 'Kajol-Akter-2020202'
 
+first, last , pay = emp_str_1.split('-')
+new_emp_1 = Employee(first, last, pay)
 
+print(new_emp_1.email)
+print(new_emp_1.pay)
 
+# The solution example below where we're using class method to do the splitting and creating a new employee object
+new_emp_1 = Employee.from_string(emp_str_1)
+
+print(new_emp_1.email)
+print(new_emp_1.pay)
