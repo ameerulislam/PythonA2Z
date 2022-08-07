@@ -75,5 +75,17 @@ print(dev_1.prog_lang)
 
 mgr_1 = Manager('Sue', 'Smith', 9000, [dev_1] )
 mgr_1.print_emps()
+print("============")
 mgr_1.add_emp(dev_2)
 mgr_1.print_emps()
+print("============")
+mgr_1.remove_emp(dev_1)
+mgr_1.print_emps()
+
+print(isinstance(mgr_1, Employee))
+print(isinstance(mgr_1, Manager))
+print(isinstance(mgr_1, Developer))
+
+print(issubclass(Developer, Employee))
+print(issubclass(Manager, Employee))
+print(issubclass(Manager, Developer))
