@@ -3,6 +3,8 @@
 ## Basic stuff will be written as refreshers
 > Will try to do problem solving from hacker rank and leet code. I might use my other existing repo for that.
 
+## Topics covered
+Python Tutorial: str() vs repr() : https://www.youtube.com/watch?v=5cvM-crlDvg
 ## Topics in Progress
 in ooppyrefresher folder
 https://www.youtube.com/watch?v=ZDa-Z5JzLYM&list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc
