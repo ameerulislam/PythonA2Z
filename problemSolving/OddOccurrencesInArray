@@ -1,0 +1,18 @@
+# My initial solution
+def solution(A):
+    # Implement your solution here
+    setA = set(A)
+    for i in setA:
+        if A.count(i) == 1:
+            return i
+        
+print(solution([9, 3, 9, 3, 9, 7, 9]))
+
+# better Mathmetical solution from chatgpt, pretty crazy!
+def solution(A):
+    # Implement your solution here
+    result = 0
+    for i in A:
+        result ^= i
+    
+    return result
